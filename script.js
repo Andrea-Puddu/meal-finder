@@ -55,6 +55,11 @@ const searchMeal = function (e) {
 
 // Fetch Meal by ID
 const getMealById = function (mealId) {
+
+  // clear meals and heading
+  resultHeading.innerHTML = "";
+  mealsEl.innerHTML = "";
+  
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}
   `)
     .then((res) => res.json())
@@ -116,8 +121,6 @@ const addMealToDOM = function (meal) {
         ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
       </ul>
     </div>
-  
-  
   
   `;
 };
